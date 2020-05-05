@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="x-ua-compatible" content="ie=edge, chrome=1" />
+<title>Hello Vue</title>
+
+<link rel="stylesheet" href="../../vue/css/line-awesome/css/line-awesome.min.css"/>
+<link rel="stylesheet" href="../../vue/css/kube.min.css" />
+
+<style>
+ .swatch-bg-accent{  
+
+background:#db4d52;
+color:#fff;
+
+}
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+.page {
+    min-height: 100%;
+       
+}
+
+.main {
+    flex-grow: 1;
+}
+
+.header, footer {
+    flex-shrink: 0;
+}
+
+
+</style>
+</head>
+<body>
+        <div class="page is-container-column">
+                <header class="header is-inset-top-20 is-inset-bottom-20 swatch-bg-accent"><i class="lab la-5x la-vuejs">&nbsp;</i></header>
+                <main class="main is-60 is-center">
+                    <h1 class="">Someone said a story</h1>
+                        <div class="article">
+                                <h3>Alex's stories</h3>
+                        <ul class="list-group">
+<story v-for="story in stories" :story="story"></story>
+                        </ul>
+
+                        
+
+                        <template id ="tsr">
+<li class="list-group-item"> {{story.writer}} said {{story.plot}}- <span>{{story.upvotes}}</span> </li>
+                       </template>
+                   
+                    </main>
+                <footer class="footer is-text-right is-inset-top-20 is-inset-bottom-20 swatch-bg-accent"><span><i class="las la-5x la-atom"></i></span></footer>
+            </div>
+        </body>
+ 
+
+
+
+<script src="../../vue/js/vue.js"></script>
+<script src="../../vue/js/axios.min.js"></script>
+
+<script type="text/javascript">
+    Vue.component('story', {  template: "#tsr",
+    props: ['story'],
+    });
+    
+    var vm = new Vue({
+     el: '.article',
+     data: {
+     stories: [],
+     story: {}
+     
+     },
+    
+     mounted: function() {
+// GET request
+axios .get('http://stories.test/api/stories' )
+.then(function (response) {
+Vue.set(vm, 'stories', response.data)
+// Or we as we did before
+// vm.stories = response.data
+})
+}
+
+    })
+   
+     </script>
+</body>
+</html>
