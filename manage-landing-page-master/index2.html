@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Manage landing page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/kube.min.css">
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+  <style>
+
+:root {
+--primary-color: hsl(228, 39%, 23%);
+--accent-color-1: hsl(12, 88%, 59%);
+--neutral-color-1: hsl(227, 12%, 61%);
+--neutral-color-2: hsl(233, 12%, 13%);
+--neutral-color-3: hsl(13, 100%, 96%);
+--neutral-color-4: hsl(0, 0%, 98%);
+}
+.is-row {margin-left:0!important;}
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {font-size: 100%; } /*16px*/
+body {
+  background: var(--neutral-color-4);
+  font-weight: 400;
+  line-height: 1.65;
+  color: var (var(--neutral-color-1));
+  font-family: 'Be Vietnam', sans-serif !important;
+  
+}
+.page{background-image: url('images/bg-body.svg'), url('images/bg-body.svg'); background-repeat:no-repeat, no-repeat; background-position: top right, center  left; background-size:  50% 50% }
+h1, h2, h3, h4, h5 {
+  margin: 2.75rem 0 1.05rem;
+  font-family: 'Be Vietnam', sans-serif;
+  font-weight: 700;
+  color: var(--primary-color);
+
+}
+
+p {margin-bottom: 1.15rem;}
+
+
+h3,h4 {
+  font-weight: 500;
+  }
+  a { color: var(--primary-color)!important; text-decoration: none!important;} a:focus,a:active,a:visited { color:var(--neutral-color-1)!important; }
+  a.button, a.button:focus,a.button:active,a.button:visited { color: var(--neutral-color-3)!important; text-decoration: none!important;}  
+  button, .button   { background: var(--accent-color-1)!important; color:var(--neutral-color-3)!important; border: none!important; border-radius:16px!important; padding:  12px 16px!important; box-shadow: 0 4px 8px -8px var(--accent-color-1)!important; font-weight: 500;}
+   ol {
+  list-style: none;
+  counter-reset: my-awesome-counter;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+ol li {}
+ol li h3 {
+  counter-increment: my-awesome-counter;
+  position: relative;
+  padding-left: 64px;
+  
+}
+ol li h3::before {
+  position: absolute;
+  width: 64px; height: 32px;
+  left: -16px;
+  top: 0px;
+  text-align: center;
+  content: "0" counter(my-awesome-counter);
+  font-weight: bold;
+   margin-right: 0.5rem;
+   border-radius: 16px;
+   background: var(--accent-color-1); color: var(--neutral-color-3);
+
+}
+.page {min-height: 100vh; border: 2px solid; max-width:1440px;  }
+.header{ min-height:125px;  }
+.footer{ min-height:150px;}
+
+.is-call-to-action { background: var(--accent-color-1) url('images/bg-simplify-section-desktop.svg');  min-height: 125px; align-items: center;justify-content: space-between;}
+.is-call-to-action h1 {color: var(--neutral-color-3)!important; max-width: 32rem;}
+.is-call-to-action  a.button { background: var(--neutral-color-3)!important; color:var(--accent-color-1)!important;}
+.is-testimonials h2,  .is-testimonials ul li { margin: 0 auto; text-align: center;}
+.is-testimonials .is-row {align-items: center; justify-content: center;}
+.is-testimonials  img {width:80px; height:80px;  margin-top: -40px; border: 1px solid var(--neutral-color-1); border-radius:50%}
+.is-testimonials .is-slider ul li { position: relative;} 
+.is-testimonials .is-slider ul li ::after {
+  content: "";
+  background:var(--neutral-color-1) ;
+  opacity: 0.03;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
+} 
+
+.footer { background: var(--neutral-color-2); color: var(--neutral-color-4);}
+.footer .is-row {align-items: center; justify-content: center;}
+.footer .secondary-nav ul li  {width: 50%; float: left;}
+.footer .button.go, input#newsletter {border-radius: 12px!important; margin-left: 12px;}
+  </style>
+
+ </head>
+<body>
+  <div class="page is-center">
+    <header class="header is-inset-40">
+    <div class="is-navbar-container">
+<div class="is-brand">
+    <span class="is-logo"><img src="images/logo.svg" alt="logo" width="146px" height:="24px" /></span>
+</div>
+<div class="is-navbar">
+    <!-- primary navigation -->
+    <nav class="primary-nav is-center">
+        <ul>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Product</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Community</a></li>
+       </ul>
+    </nav>
+    <!-- secondary navigation -->
+    <nav class="is-push-right">
+        <ul>
+            <li><a class ="button is-small is-secondary" href="#">Get Started</a></li>
+        </ul>
+    </nav>
+</div>
+</div>
+    </header>
+    <main class="main">
+    <div class="is-row is-introduction is-inset-40"><div class="is-col is-intro"><h1>Bring everyone together to build better products.</h1>
+     <p class = "leading"> Manage makes it simple for software teams to plan day-to-day 
+      tasks while keeping the larger team goals in view.</p>
+      <ul class="is-unstyled">
+        <li><a class ="button is-small is-secondary" href="#">Get Started</a></li>
+    </ul></div><div class="is-col"><img src= "images/illustration-intro.svg" alt = "introductory illustration"/> </div></div>
+    <div class="is-row is-features"><div class="is-col"> <h2>What’s different about Manage?</h2>
+      Manage provides all the functionality your team needs, without 
+      the complexity. Our software is tailor-made for modern digital 
+      product teams.</div><div class="is-col is-features-list">
+        <ol>
+<li>
+  <h3>Track company-wide progress</h3>
+  <p>See how your day-to-day tasks fit into the wider vision. Go from 
+  tracking progress at the milestone level all the way done to the 
+  smallest of details. Never lose sight of the bigger picture again.</p></li>
+  <li><h3>  Advanced built-in reports</h3><p> Set internal delivery estimates and track progress toward company 
+    goals. Our customisable dashboard helps you build out the reports 
+    you need to keep key stakeholders informed.</p></li>
+    <li><h3> Everything you need in one place</h3><p>  Stop jumping from one service to another to communicate, store files, 
+      track tasks and share documents. Manage offers an all-in-one team 
+      productivity solution.</p></li>
+      </ol></div></div>
+      <div class="is-row is-testimonials is-inset-40">
+
+       <h2 style="padding:80px;"> What they’ve said</h2>
+     
+      <div class="is-row is-slider">
+           <ul class ="is-row is-unstyled"><li class="is-col"><img src="images/avatar-anisha.png" alt="anisha"/><h4>Anisha Li</h4><p>  
+             “Manage has supercharged our team’s workflow. The ability to maintain 
+             visibility on larger milestones at all times keeps everyone motivated.”</p></li>
+             <li class="is-col"><img src="images/avatar-ali.png" alt="ali"  /><h4>Ali Bravo</h4><p>  
+               
+               “We have been able to cancel so many other subscriptions since using 
+               Manage. There is no more cross-channel confusion and everyone is much 
+               more focused.”</p></li>
+               <li class="is-col"><img src="images/avatar-richard.png" alt="richard"  /><h4> Richard Watts</h4><p>  
+                
+       “Manage allows us to provide structure and process. It keeps us organized 
+       and focused. I can’t stop recommending them to everyone I talk to!”</p></li>
+                 <li class="is-col"><img src="images/avatar-shanai.png" alt="shanai"  /><h4> Shanai Gough</h4><p>  
+                  “Their software allows us to track, manage and collaborate on our projects 
+                   from anywhere. It keeps the whole team in-sync without being intrusive.”</p></li>
+         </ul> 
+         <ul class="is-row is-unstyled">
+           <li><a class ="button is-small is-secondary" href="#">Get Started</a></li>
+       </ul></div></div>
+<div class="is-row is-call-to-action is-inset-40">
+<h1>Simplify how your team works today.</h1>
+<ul class="is-row is-unstyled">
+  <li class="is-col is-text-center is-100"><a class ="button is-small is-secondary" href="#">Get Started</a></li>
+</ul>
+</div>
+
+    </main>
+    <footer class="footer is-inset-40">
+      <div class="is-row">
+        <div class="is-col is-container-column">
+           <img src ="images/logo-inverted.svg" alt="logo" width="146px" height:="24px" />
+          <nav class="social-nav is-inline">
+          <ul class="is-bar is-unstyled">
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Youtube</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Pinterest</a></li>
+                <li><a href="#">Instagram</a></li>
+           </ul>
+        </nav>
+      </div>
+        
+        
+        <div class="is-col">
+         <nav class="secondary-nav is-center">
+        <ul class="is-unstyled">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Product</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Community</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+       </ul>
+    </nav></div>  
+   <div class="is-col is-container-column "> 
+    <form method="post" action="">
+      <div class="form-item">
+          <label>Label</label>
+          <div class="is-append is-100">
+              <input id="newsletter" type="text" name="newsletter" placeholder="Updates in your inbox…">
+              <button class="button go">Go</button>
+          </div>
+      </div>
+  </form>
+    
+    
+    
+    
+ <p class="is-small" Copyright 2020. All Rights Reserved</p></div>
+</div>
+<div class="is-row">
+
+  <div class="attribution is-small is-push-right">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+
+
+</div>
+
+    </footer>
+
+
+</div>
+
+  
+  
+<script src="../js/kube.min.js" ></script>
+
+<script>
+  $K.init({
+  observer: true
+  });
+  </script>
+</body>
+</html>
