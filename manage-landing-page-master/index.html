@@ -19,8 +19,6 @@
 --neutral-color-3: hsl(13, 100%, 96%);
 --neutral-color-4: hsl(0, 0%, 98%);
 }
-
-
   </style>
   <style>
     .attribution {font-size: 11px; text-align: center; }
@@ -42,7 +40,6 @@
 [class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'fedsocial' !important;
-  speak: none;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -81,7 +78,7 @@
 
 </style>
   <style>
-    
+  body {font-size: 16px; font-family:  'Be Vietnam', sans-serif; }  
 h1, h2, h3, h4, h5 {
   /* margin: 2.75rem 0 1.05rem; */
   font-family: 'Be Vietnam', sans-serif;
@@ -98,14 +95,15 @@ p {margin-bottom: 1.15rem;}
   input#newsletter{border-radius: 1rem;}
   input#newsleter::placeholder {color: var(--neutral-color-3);}
  .button.is-inverted { background: var(--neutral-color-3)!important; color: var(--accent-color-1)!important; }
-.is-introduction .is-col:nth-child(1) * , .is-features .is-col:nth-child(1) * { max-width: 21rem;}
-  .page {border: 2px solid;}
+  .page {border: 2px solid; background-image:url('images/bg-tablet-pattern.svg'), url('images/bg-tablet-pattern.svg');
+  background-repeat:no-repeat, no-repeat; background-position: 140% -10%,-90% 70%;  position: relative;}
   .page { width: 100%; max-width: 1440px;flex-wrap: wrap;}
   .page { align-items:  center; justify-content: space-between;}
   .header,.main, .footer {min-height: 10vh; width: 100%;}
   .is-row { min-width: 100%; max-width: 100%; width: 100%; flex-wrap: wrap; margin:0; padding:0;}
   .is-row > .is-col {margin-left:0;}
   .header, .is-section {margin-bottom: 1rem;}
+  .is-introduction .is-col:nth-child(1) * , .is-features .is-col:nth-child(1) * { max-width: 21rem;}
   .is-testimonials, .is-testimonials .is-col { margin:0 auto; text-align:center;}
   .is-testimonials h2 {text-align:center;  display: block; width: 100%; margin-bottom :3rem; margin-top: -3rem;}
   .is-testimonials .slider {padding-top: 3rem;}
@@ -135,7 +133,6 @@ p {margin-bottom: 1.15rem;}
   counter-increment: my-awesome-counter;
   position: relative;
 
-  
 }
 .is-features  ol li h3::before {
   position: absolute;
@@ -150,6 +147,9 @@ p {margin-bottom: 1.15rem;}
    background: var(--accent-color-1); color: var(--neutral-color-3);
 
 }
+
+
+
  /*  watchCSS: true
 // enable Flickity in CSS when
 // element:after { content: 'flickity' } */
@@ -166,7 +166,7 @@ p {margin-bottom: 1.15rem;}
   }
  }
 
-@media screen and ( max-width: 767px ) {
+@media screen and (max-width: 767px ) {
   .is-introduction {flex-direction: column-reverse;}
   .section {margin-bottom: 3rem;}
   .is-features ol li h3 {font-size: 90%; background: var(--neutral-color-3);}
@@ -174,7 +174,99 @@ p {margin-bottom: 1.15rem;}
   .slider { margin-top: 0;}
   .slider .is-col , .slider .card  p, .slider .card h4 {width: 100%!important; }
   .slider .card img { margin-top: 0rem;}
-  .flickity-button {margin-top: 6rem;}
+  .flickity-button {margin-top: 2rem;}
+  .is-brand { display: flex; justify-content: space-between;}
+ 
+ 
+ /*!span.
+ * Hamburgers
+ * @description Tasty CSS-animated hamburgers
+ * @author Jonathan Suh @jonsuh
+ * @site https://jonsuh.com/hamburgers
+ * @link https://github.com/jonsuh/hamburgers
+ */
+ .hamburger {
+  padding: 15px 15px;
+  display: inline-block;
+  cursor: pointer;
+  transition-property: opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  overflow: visible; }
+  .hamburger:hover {
+    opacity: 0.7; }
+  .hamburger.is-active:hover {
+    opacity: 0.7; }
+  .hamburger.is-active .hamburger-inner,
+  .hamburger.is-active .hamburger-inner::before,
+  .hamburger.is-active .hamburger-inner::after {
+    background-color: #000; }
+
+.hamburger-box {
+  width: 40px;
+  height: 24px;
+  display: inline-block;
+  position: relative; }
+
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -2px; }
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+    width: 40px;
+    height: 4px;
+    background-color: #000;
+    border-radius: 4px;
+    position: absolute;
+    transition-property: transform;
+    transition-duration: 0.15s;
+    transition-timing-function: ease; }
+  .hamburger-inner::before, .hamburger-inner::after {
+    content: "";
+    display: block; }
+  .hamburger-inner::before {
+    top: -10px; }
+  .hamburger-inner::after {
+    bottom: -10px; }
+
+    /*
+   * Collapse
+   */
+.hamburger--collapse .hamburger-inner {
+  top: auto;
+  bottom: 0;
+  transition-duration: 0.13s;
+  transition-delay: 0.13s;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+  .hamburger--collapse .hamburger-inner::after {
+    top: -20px;
+    transition: top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), opacity 0.1s linear; }
+  .hamburger--collapse .hamburger-inner::before {
+    transition: top 0.12s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+
+.hamburger--collapse.is-active .hamburger-inner {
+  transform: translate3d(0, -10px, 0) rotate(-45deg);
+  transition-delay: 0.22s;
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
+  .hamburger--collapse.is-active .hamburger-inner::after {
+    top: 0;
+    opacity: 0;
+    transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333), opacity 0.1s 0.22s linear; }
+  .hamburger--collapse.is-active .hamburger-inner::before {
+    top: 0;
+    transform: rotate(-90deg);
+    transition: top 0.1s 0.16s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.25s cubic-bezier(0.215, 0.61, 0.355, 1); }
+   .is-col *  {margin:0 auto; text-align: center;}
+   .is-col *  {margin-bottom: 12px!important;}
+    .is-introduction .is-col:nth-child(1) * , .is-features .is-col:nth-child(1) * { max-width: 100% ;}
+    .primary-nav ul li  { display: block; padding: 1rem; font-size: 135%; font-weight:600; color: var(--primary-color)!important;}
+     span.close {display:none!important;}
 }
  </style>
  
@@ -182,15 +274,19 @@ p {margin-bottom: 1.15rem;}
 <body>
   <div class="page is-container-row is-center">
     <header class="header">
-
-
-      <div class="is-navbar-container">
+      <div class="is-navbar-container" data-kube="mobile-menu">
         <div class="is-brand">
-            <span class="is-logo"><img src="images/logo.svg" alt="logo" width="146px" height:="24px" /></span>
-        </div>
-        <div class="is-navbar">
-            <!-- primary navigation -->
-            <nav class="primary-nav is-center">
+          <span class="is-logo"><img src="images/logo.svg" alt="logo" width="146px" height:="24px" /></span>
+          <button class= "hamburger hamburger--collapse is-push-right is-shown-mobile"  data-kube="mobile-menu" data-type= "show" type="button">
+            <span class="hamburger-box">
+              <span class="hamburger-inner"></span>
+            </span>
+          </button>
+               </div>
+             
+        <!-- primary navigation -->
+            <div id="header-navbar" class="is-navbar is-hidden-mobile">
+            <nav class="primary-nav is-center is-text-center" >
                 <ul>
                     <li><a href="#">Pricing</a></li>
                     <li><a href="#">Product</a></li>
@@ -198,14 +294,14 @@ p {margin-bottom: 1.15rem;}
                     <li><a href="#">Careers</a></li>
                     <li><a href="#">Community</a></li>
                </ul>
-            </nav>
+            </nav></div>
             <!-- secondary navigation -->
             <nav class="is-push-right is-hidden-mobile">
                 <ul>
                     <li><a class ="button is-small is-secondary" href="#">Get Started</a></li>
                 </ul>
             </nav>
-        </div>
+        
         </div>
          </header>
     <main class="main">
@@ -273,12 +369,13 @@ p {margin-bottom: 1.15rem;}
         </ul>
     </nav></div>
         <div class="is-row is-call-to-action">
+<div class="is-col">
 <h1>Simplify how your team works today.</h1>
 <nav class="is-get-started is-push-right">
   <ul>
       <li><a class ="button is-small is-secondary is-inverted" href="#">Get Started</a></li>
   </ul>
-</nav>
+</nav></div>
 </div>
 
     </main>
@@ -313,7 +410,7 @@ p {margin-bottom: 1.15rem;}
    <div class="is-col"> 
     <form method="post" action="">
       <div class="form-item">
-          <label>Label</label>
+          <!-- <label>Label</label> -->
           <div class="is-append">
               <input id="newsletter" type="text" name="newsletter" placeholder="Updates in your inbox…">
               <button class="button go">Go</button>
@@ -345,20 +442,71 @@ p {margin-bottom: 1.15rem;}
   $K.init({
   observer: true
   });
+  
+
+  (function($K)
+{
+$K.add('module', 'mobile-menu', {
+init: function(app, context)
+{
+
+this.app = app;
+
+// define service
+this.modal = app.modal;
+},
+onclick: function(e, element, type)
+{
+e.preventDefault();
+if (type ==='show')
+element.classList.toggle ('is-active');
+
+if (element.classList.contains('is-active'))
+{
+
+this.showModal();
+}
+
+else {
+
+this.hideModal();
+
+} 
+}
+,
+
+onmessage: {
+modal: {
+closed: function(sender, $modal, $form)
+{
+console.log('Modal is opened');
+var menu = document.querySelector('.hamburger');
+menu.classList.remove('is-active');
+}
+}
+},
+showModal: function()
+{
+this.modal.open({
+target: '#header-navbar',
+title: ''
+});
+},
+hideModal: function()
+{  
+this.modal.close();
+}
+
+});
+})(Kube)
   </script>
   <script>
-
-    
 var elem = document.querySelector('.slider');
 var flkty = new Flickity( elem, {
   // options
   cellSelector: '.card',
   watchCSS: true
-  
-});
-
-
-
+  });
   </script>
 </body>
 </html>
