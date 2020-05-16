@@ -22,11 +22,11 @@
   --secondary-color: hsl(240, 18%, 77%);
 }
 
-*,*::after,*::::before{box-sizing: border-box;}
+*, *::after, *::before {box-sizing: border-box;}
 body {font-size: 32px; color: var(--main-color);}
 .is-quote { font-weight: 300!important; font-family: 'Inter', sans-serif!important; }
 .page {min-height: 100vh;}
-.is-row , .is-col{margin-left: 0;}'
+.is-row , .is-col{margin-left: 0;}
 /* body{background: url('images/pattern-bg.svg') no-repeat top right;} */
     .lg {max-width: 1440px;}
     .is-flex-wrap {flex-wrap: wrap;}
@@ -39,8 +39,9 @@ body {font-size: 32px; color: var(--main-color);}
     cite > span {color: var(--secondary-color); font-weight: 500;}
     .is-image img {padding: 60px;}
     .is-row.is-nav-container {justify-content: flex-end;}
-    .is-slider-nav {width: 144px; height:48px;  background: #fefefe; border-radius: 32px;  margin-right: 238px; margin-top: -80px;}
-   
+    .is-slider-nav {width: 144px; height:48px;  background: #fefefe; border-radius: 32px;  margin-right: 238px; margin-top: -80px; line-height: 32px;}
+   .is-slider-nav button {background: transparent!important; border: none!important;}
+   .is-slider-nav button:disabled {opacity:0.3;}
     </style>
     <style>
     .is-absolute-left { position: absolute; top:0; left:0}
@@ -100,11 +101,11 @@ body {font-size: 32px; color: var(--main-color);}
               </div>
           <div class="is-row is-nav-container">
          <nav class="is-slider-nav is-text-center is-center-mobile is-shadow-2 is-outset-20 is-relative">
-         <a class="is-pointer slider-buttonPrevious"><img src="images/icon-prev.svg"/></a>
-        <a class=" is-pointer slider-buttonNext"><img src="images/icon-next.svg"/></a></nav>
+         <button  title ="button previous" class=" is-pointer slider-buttonPrevious"><img src="images/icon-prev.svg" alt ="previous"/></button>
+        <button title ="button next" class=" is-pointer slider-buttonNext"><img src="images/icon-next.svg" alt ="next"/></button></nav>
       </div></div></div>
   
-  <main>
+    </main>
 <footer class="footer is-row"> <div class="attribution">
   Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
   Coded by <a href="#">A.S.</a>.
@@ -153,10 +154,10 @@ carousel: false
 //Swipe
 var wallopSwipe = new SwipeIt('.Wallop'); wallopSwipe.on('swipeLeft',function(e){ 
 wallop.next(); 
-}) 
+}); 
 wallopSwipe.on('swipeRight',function(e){ 
 wallop.previous(); 
-}) 
+});
 /*
 Listen to keydown and update wallop
 */
