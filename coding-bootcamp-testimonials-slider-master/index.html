@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/kube.min.css"> 
+  <link rel="stylesheet" href="../assets/css/wallop--slide.css">
+  
+  <title>Frontend Mentor | Coding Bootcamp Testimonials Slider</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+    <style>
+      :root {
+  --main-color: hsl(240, 38%, 20%);
+  --secondary-color: hsl(240, 18%, 77%);
+}
+
+*,*::after,*::::before{box-sizing: border-box;}
+body {font-size: 32px; color: var(--main-color);}
+.is-quote { font-weight: 300!important; font-family: 'Inter', sans-serif!important; }
+.page {min-height: 100vh;}
+.is-row , .is-col{margin-left: 0;}'
+/* body{background: url('images/pattern-bg.svg') no-repeat top right;} */
+    .lg {max-width: 1440px;}
+    .is-flex-wrap {flex-wrap: wrap;}
+    .Wallop-slider {background:url('images/pattern-curve.svg'),url('images/pattern-quotes.svg'), url('images/pattern-bg.svg'); background-position: 0% 100%, 10% 9%, 90% -6%;
+    background-repeat: no-repeat;}
+    blockquote{border-left: none; text-align: justify; margin-right: 24px;}
+    blockquote > cite { font-size: 18px; margin-top: 40px; font-weight: 600;}
+    blockquote  > cite /* , cite > span  */{display: block; margin-bottom: 20px;}
+    blockquote:not(cite) {font-weight: 300;}
+    cite > span {color: var(--secondary-color); font-weight: 500;}
+    .is-image img {padding: 60px;}
+    .is-row.is-nav-container {justify-content: flex-end;}
+    .is-slider-nav {width: 144px; height:48px;  background: #fefefe; border-radius: 32px;  margin-right: 238px; margin-top: -80px;}
+   
+    </style>
+    <style>
+    .is-absolute-left { position: absolute; top:0; left:0}
+    .is-absolute-right { position: absolute; top:0; right:0}
+    .is-visible{visibility: visible;}
+    .is-pointer {cursor:pointer;}
+    .is-slide { visibility: hidden; position: absolute; top: 0; left: 0; width: 100%; }  
+    .is-slide--current { visibility: visible; position: relative; } 
+
+
+
+ @media only screen and (max-width: 767px)  
+{   .is-slide{flex-direction: column-reverse;}
+    blockquote > cite, cite > span { display: block; margin-bottom: 20px; text-align: center; }
+   .is-row.is-nav-container {order:-1; transform: translateY(564px);}
+   .is-slider-nav {  display: block; margin:0 auto; text-align: center;}
+   .is-image {min-height: 540px;} 
+   .is-image img { padding: 0; width:540px; height:540px; object-fit: cover;}
+   .is-quote { padding: 20px; background:url('images/pattern-quotes.svg') no-repeat 50% 24px }
+
+ 
+
+ }
+
+
+    </style>
+ 
+
+
+</head>
+<body class="body">
+<div class="page lg is-container-column is-flex-wrap is-center">
+<header class="header is-row">&nbsp;</header>
+<main class= "main is-container-column is-flex-wrap">
+        <div class="Wallop Wallop--slide is-relative">
+        <div class="Wallop-slider is-relative is-no-scroll is-container-column">
+          <div class="is-slide is-row is-slide--current is-items-middle">
+           <div class="is-quote is-col">
+            <blockquote>“I’ve been interested in coding for a while but never taken the jump, until now. 
+              I couldn’t recommend this course enough. I’m now in the job of my dreams and so 
+              excited about the future.”
+              <cite>Tanya Sinclair
+               <span> UX Engineer</span></cite>
+            </blockquote></div>
+           <div class="is-image is-col is-text-right is-stack-20-mobile"><img src="images/image-tanya.jpg" alt="Tanya Sinclair"/></div>
+          </div>
+           
+          <div class="Wallop-item is-slide is-row is-items-middle">
+            <div class="is-quote is-col ">
+        <blockquote>“If you want to lay the best foundation possible I’d recommend taking this course. 
+              The depth the instructors go into is incredible. I now feel so confident about 
+              starting up as a professional developer.”
+              <cite>  John Tarkpor
+                <span>Junior Front-end Developer</span></cite>
+            </blockquote></div>
+            <div class="is-image is-col is-text-right is-stack-20-mobile"><img src ="images/image-john.jpg" alt="John Tarkpor"/></div>
+              </div>
+          <div class="is-row is-nav-container">
+         <nav class="is-slider-nav is-text-center is-center-mobile is-shadow-2 is-outset-20 is-relative">
+         <a class="is-pointer slider-buttonPrevious"><img src="images/icon-prev.svg"/></a>
+        <a class=" is-pointer slider-buttonNext"><img src="images/icon-next.svg"/></a></nav>
+      </div></div></div>
+  
+  <main>
+<footer class="footer is-row"> <div class="attribution">
+  Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+  Coded by <a href="#">A.S.</a>.
+</div></footer>
+</div>
+  
+
+ 
+
+
+  
+ 
+
+  <!-- <script src="../js/kube.min.js"></script> -->
+  <script src="../assets/js/Wallop.min.js"></script>
+   <script>
+    /*   $K.init({
+        observer:true
+
+        });  */
+/*===========================
+  Swipe-it v1.4.1
+  An event listener for swiping gestures with vanilla js.
+  https://github.com/tri613/swipe-it#readme
+ 
+  @Create 2016/09/22
+  @Update 2017/08/11
+  @Author Trina Lu
+  ===========================*/
+"use strict";var _slicedToArray=function(){function n(n,t){var e=[],i=!0,o=!1,r=void 0;try{for(var u,c=n[Symbol.iterator]();!(i=(u=c.next()).done)&&(e.push(u.value),!t||e.length!==t);i=!0);}catch(n){o=!0,r=n}finally{try{!i&&c.return&&c.return()}finally{if(o)throw r}}return e}return function(t,e){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return n(t,e);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}();!function(n,t,e){function i(n){function e(){o("touchstart",m,w),o("touchmove",d,w),o("touchend",p,w),E.mouseEvent&&o("mousedown",s,w)}function i(){y=!1,D=!1,A=!1,b=!1,a=!1}function s(n){a=this,y=n.clientX,D=n.clientY,o("mousemove",l,v),o("mouseup",h,v)}function l(n){n.preventDefault(),y&&D&&(A=n.clientX,b=n.clientY)}function h(n){r("mousemove",l,v),r("mouseup",h,v),p(n)}function m(n){a=this,y=n.touches[0].clientX,D=n.touches[0].clientY}function d(n){A=n.touches[0].clientX,b=n.touches[0].clientY}function p(n){if(y&&D&&A&&b){var t=y-A,e=D-b,o=[t,e].map(Math.abs),r=_slicedToArray(o,2),c=r[0],s=r[1],v=E.minDistance;if(c>v){var f=y<A?"swipeRight":"swipeLeft";u(f,a,{distance:t,start:y,end:A})}if(s>v){var l=D>b?"swipeUp":"swipeDown";u(l,a,{distance:e,start:D,end:b})}(c>v||s>v)&&u("swipe",a)}i()}var E=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{},w=c(t.querySelectorAll(n)),y=void 0,D=void 0,A=void 0,b=void 0;E.mouseEvent=void 0===E.mouseEvent?f.mouseEvent:E.mouseEvent,E.minDistance=void 0===E.minDistance?f.minDistance:E.minDistance,i(),e(),this.on=function(n,t){return o(n,t,w),this}}function o(n,t,e){s(e).forEach(function(e){return e.addEventListener(n,t)})}function r(n,t,e){s(e).forEach(function(e){return e.removeEventListener(n,t)})}function u(n,e){var i=arguments.length>2&&void 0!==arguments[2]?arguments[2]:{},o=t.createEvent("Event");o.initEvent(n,!0,!0),o.swipe=i,s(e).forEach(function(n){return n.dispatchEvent(o)})}function c(n){for(var t=[],e=0;e<n.length;e++)t.push(n[e]);return t}function s(n){return Array.isArray(n)?n:[n]}var a=!1,v=[n],f={mouseEvent:!0,minDistance:30};n[e]=i}(window,document,"SwipeIt");
+
+
+var wallopEl = document.querySelector('.Wallop');
+var wallop = new Wallop(wallopEl, {
+buttonPreviousClass: 'slider-buttonPrevious',
+buttonNextClass: 'slider-buttonNext',
+itemClass: 'is-slide',
+currentItemClass: 'is-slide--current',
+showPreviousClass: 'is-slide--showPrevious',
+showNextClass: 'is-slide--showNext',
+hidePreviousClass: 'is-slide--hidePrevious',
+hideNextClass: 'is-slide--hideNext',
+carousel: false
+});
+
+//Swipe
+var wallopSwipe = new SwipeIt('.Wallop'); wallopSwipe.on('swipeLeft',function(e){ 
+wallop.next(); 
+}) wallopSwipe.on('swipeRight',function(e){ 
+wallop.previous(); 
+}) 
+/*
+Listen to keydown and update wallop
+*/
+window.onkeydown = function(e) {
+  switch (e.keyCode) {
+    case 37:
+      wallop.previous();
+      break;
+    case 39:
+      wallop.next();
+      break;
+  }
+};
+
+    </script>
+
+</body>
+</html>
+
+
+
+
+
